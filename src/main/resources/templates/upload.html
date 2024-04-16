@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Загрузка и распознавание изображения</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script type="text/javascript" src="/js/script.js"></script>
+</head>
+<body onload="manageButtonVisibility()">
+<h1>Загрузите изображение</h1>
+<form id="uploadForm" method="POST" enctype="multipart/form-data" action="/recognize">
+    <input type="file" name="file" id="fileInput" />
+    <input type="submit" value="Распознать" />
+    <br /><br />
+    <a href="http://localhost:5050">Вернуться</a>
+</form>
+<div id="ocrResult" style="display: none;">
+    <p id="ocrResponse" th:if="${ocrResponse}" th:utext="'Результат распознавания: ' + ${ocrResponse}"></p>
+    <p th:if="${error}" th:text="${error}"></p>
+</div>
+<div class="success-message">Файл распознан успешно</div>
+<div class="error-message">Ошибка при распознавании файла</div>
+<button id="openButton" onclick="openNewWindow()" style="display: none;">Открыть в новом окне</button>
+</body>
+</html>
