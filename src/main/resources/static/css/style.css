@@ -92,3 +92,23 @@ a:hover {
 .error-message {
     color: #dc3545;
 }
+
+.ocr-container {
+    position: relative;
+}
+.ocr-line {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+}
+.ocr-word {
+    position: relative;
+    margin: 0 2px;
+    padding: 0 2px;
+    border: 1px dashed #ccc;
+}
+.ocr-confidence {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
